@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SquareStair Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/" class="logo">
+                        <img src="assets/images/Logo4.png" alt="SquareStair Media Logo">
+                    </a>
+                </div>
+                <nav class="header__nav" id="main-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html" class="header__link">Home</a></li>
+                        <li><a href="index.html#services" class="header__link">Services</a></li>
+                        <li><a href="about.html" class="header__link">About</a></li>
+                        <li><a href="resources.html" class="header__link">Resources</a></li>
+                        <li><a href="blog.html" class="header__link">Blog</a></li>
+                        <li><a href="contact.html" class="header__link active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cta">
+                    <a href="contact.html" class="btn btn--primary">Get Started</a>
+                </div>
+                <button class="header__toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for Contact Page -->
+        <section class="hero contact-hero">
+            <div class="container">
+                <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero__title">
+                        <span class="text-reveal">Get in</span>
+                        <span class="gradient-text text-reveal">Touch</span>
+                    </h1>
+                    <p class="hero__subtitle">Ready to transform your digital strategy? Contact us today to discuss how our AI-powered solutions can help your business grow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact__wrapper">
+                    <div class="contact__info" data-aos="fade-right">
+                        <span class="section-tagline">Contact Us</span>
+                        <h2 class="section-title">Ready to <span class="gradient-text">Transform</span> Your Digital Strategy?</h2>
+                        <p>Schedule a discovery call to discuss how our AI-powered solutions can help your business grow.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-method__icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-method__details">
+                                    <h4>Email Us</h4>
+                                    <p>hello@squarestairmedia.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method__icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-method__details">
+                                    <h4>Call Us</h4>
+                                    <p>+1 (416) 555-0123</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-method__icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-method__details">
+                                    <h4>Location</h4>
+                                    <p>Toronto, Canada</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__form" data-aos="fade-left">
+                        <form id="contact-form">
+                            <div class="form-header">
+                                <h3>Book a Discovery Call</h3>
+                                <p>Fill out the form below and we'll be in touch within 24 hours.</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-name">Full Name</label>
+                                <input type="text" id="contact-name" required placeholder="Your Name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" required placeholder="you@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-company">Company Name</label>
+                                <input type="text" id="contact-company" placeholder="Your Company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" placeholder="Your Phone Number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-service">Service Interested In</label>
+                                <select id="contact-service">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="seo">AI-powered SEO Audits</option>
+                                    <option value="website">Website Design & Development</option>
+                                    <option value="automation">AI Workflow Automation</option>
+                                    <option value="content">Content Strategy & Copywriting</option>
+                                    <option value="email">Email Marketing Setup</option>
+                                    <option value="funnel">Lead Funnel Optimization</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">How can we help?</label>
+                                <textarea id="contact-message" rows="4" placeholder="Tell us about your project or needs"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--block">
+                                <span>Book My Call</span>
+                                <i class="fas fa-calendar-check"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">FAQs</span>
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                    <p class="section-subtitle">Get answers to common questions about our services and approach.</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="faq-question">
+                            <h3>What does AI-powered digital marketing mean?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>AI-powered digital marketing means we leverage artificial intelligence tools and algorithms to enhance traditional marketing strategies. This includes using AI for data analysis, content creation assistance, automation of repetitive tasks, personalized customer experiences, and predictive analytics to make more informed marketing decisions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="faq-question">
+                            <h3>How long does it typically take to see results?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While some improvements can be seen immediately (such as workflow efficiencies from automation), most digital marketing efforts take time to show measurable results. Typically, clients begin seeing noticeable improvements within 60-90 days. SEO strategies might take 3-6 months for significant ranking improvements, while email marketing and paid advertising strategies can show results more quickly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="faq-question">
+                            <h3>Do you offer ongoing support after implementation?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer various ongoing support packages tailored to your needs. These can include regular strategy sessions, technical support, analytics reporting, content updates, and continuous optimization of your digital assets. We believe in building long-term partnerships with our clients to ensure sustained growth.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="faq-question">
+                            <h3>What makes your SEO approach different?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our SEO FlashLight tool uses AI to identify high-impact opportunities that traditional SEO audits might miss. We focus on actionable recommendations rather than overwhelming you with data. Additionally, we prioritize sustainable, white-hat SEO practices that align with your overall business goals rather than chasing algorithm changes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="faq-question">
+                            <h3>How do you price your services?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer flexible pricing models depending on your needs. This includes project-based pricing for one-time initiatives, monthly retainers for ongoing services, and custom packages that combine various services. We provide transparent pricing with no hidden fees and work to create solutions that fit within your budget constraints.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                        <div class="faq-question">
+                            <h3>What industries do you specialize in?</h3>
+                            <button class="faq-toggle">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While we work with businesses across many sectors, we have particular expertise in professional services, nonprofits, digital publishing, and wellness industries. Our experience in these areas allows us to understand industry-specific challenges and opportunities, but our AI-powered approach can be adapted to virtually any business model.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-wrapper" data-aos="fade-up">
+                    <div class="map-container">
+                        <!-- Replace with actual map embed code -->
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Interactive Map</p>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <h3>Visit Our Office</h3>
+                        <p>While most of our collaboration happens virtually, we welcome in-person meetings at our Toronto office by appointment.</p>
+                        <address>
+                            <i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 500<br>
+                            Toronto, ON M5V 2N5<br>
+                            Canada
+                        </address>
+                        <p class="map-hours">
+                            <i class="far fa-clock"></i> Monday-Friday: 9:00 AM - 5:00 PM EST
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Team CTA -->
+        <section class="cta-banner">
+            <div class="container">
+                <div class="cta-banner__content" data-aos="fade-up">
+                    <h2>Join Our Independent Consultant Program</h2>
+                    <p>Looking to partner with a forward-thinking agency? Our IC program offers skilled freelancers and consultants the opportunity to work under the SquareStair Media brand.</p>
+                    <a href="#" class="btn btn--light">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/logo-light.png" alt="SquareStair Media Logo">
+                    </a>
+                    <p>AI-powered digital marketing solutions for small to mid-sized businesses, nonprofits, and entrepreneurs.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Services</h4>
+                        <ul class="footer__links">
+                            <li><a href="index.html#services">SEO Audits</a></li>
+                            <li><a href="index.html#services">Website Design</a></li>
+                            <li><a href="index.html#services">AI Automation</a></li>
+                            <li><a href="index.html#services">Content Strategy</a></li>
+                            <li><a href="index.html#services">Email Marketing</a></li>
+                            <li><a href="index.html#services">Lead Funnel Optimization</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Resources</h4>
+                        <ul class="footer__links">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="resources.html">Free Downloads</a></li>
+                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="resources.html#webinars">Webinars</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Company</h4>
+                        <ul class="footer__links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Consultant Program</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__subscribe">
+                    <h4 class="footer__heading">Join Our Newsletter</h4>
+                    <p>Get the latest insights on digital marketing and AI trends.</p>
+                    <form class="footer__form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 SquareStair Media. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | SquareStair Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/" class="logo">
+                        <img src="assets/images/Logo4.png" alt="SquareStair Media Logo">
+                    </a>
+                </div>
+                <nav class="header__nav" id="main-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html" class="header__link">Home</a></li>
+                        <li><a href="index.html#services" class="header__link">Services</a></li>
+                        <li><a href="about.html" class="header__link">About</a></li>
+                        <li><a href="resources.html" class="header__link active">Resources</a></li>
+                        <li><a href="blog.html" class="header__link">Blog</a></li>
+                        <li><a href="contact.html" class="header__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cta">
+                    <a href="contact.html" class="btn btn--primary">Get Started</a>
+                </div>
+                <button class="header__toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for Resources Page -->
+        <section class="hero resources-hero">
+            <div class="container">
+                <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero__title">
+                        <span class="text-reveal">Free</span>
+                        <span class="gradient-text text-reveal">Marketing Resources</span>
+                    </h1>
+                    <p class="hero__subtitle">Access our library of downloadable resources, templates, and guides designed to help you implement effective digital marketing strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resource Section -->
+        <section class="featured-resource">
+            <div class="container">
+                <div class="lead-form__wrapper" data-aos="fade-up">
+                    <div class="lead-form__content">
+                        <h2>Get Our <span class="gradient-text">Latest Resource</span></h2>
+                        <p>Sign up to receive our Content Strategy Calendar and stay updated with the latest digital marketing insights.</p>
+                        <div class="resource-preview">
+                            <img src="assets/resource-preview.jpg" alt="Content Strategy Calendar">
+                        </div>
+                    </div>
+                    <div class="lead-form__form">
+                        <form id="resource-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" placeholder="Your Company">
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select id="industry">
+                                    <option value="" disabled selected>Select your industry</option>
+                                    <option value="tech">Technology</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="education">Education</option>
+                                    <option value="nonprofit">Nonprofit</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--block">
+                                <span>Get Instant Access</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                            <p class="form-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Grid Section -->
+        <section class="resources">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">Downloadable Resources</span>
+                    <h2 class="section-title">Actionable Tools & <span class="gradient-text">Templates</span></h2>
+                    <p class="section-subtitle">Everything you need to elevate your digital marketing strategy, designed for busy professionals.</p>
+                </div>
+                
+                <div class="resources-grid">
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-1.jpg" alt="SEO Checklist">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Checklist</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>2025 SEO Optimization Checklist</h3>
+                            <p>A comprehensive checklist to ensure your website meets modern SEO requirements and ranks better in search results.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="seo-checklist">Download Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-2.jpg" alt="AI Automation Playbook">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Playbook</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>AI Automation Playbook for SMBs</h3>
+                            <p>Learn how to identify, implement, and optimize AI automation opportunities in your small business.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="ai-playbook">Download Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-3.jpg" alt="Landing Page Template">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Template</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>High-Converting Landing Page Templates</h3>
+                            <p>Ready-to-use wireframes and templates for creating landing pages that drive conversions.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="landing-template">Download Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Resources (expanded from questionnaire) -->
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-4.jpg" alt="Content Strategy Calendar">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Template</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>Content Strategy Calendar</h3>
+                            <p>Plan your content for the year with this comprehensive template that helps you stay consistent and strategic.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="content-calendar">Download Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-5.jpg" alt="AI for Nonprofits Guide">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Guide</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>AI Tools for Nonprofits</h3>
+                            <p>A specialized guide for nonprofit organizations to effectively implement AI tools on limited budgets.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="nonprofit-ai">Download Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="resource-card__image">
+                            <img src="assets/resource-6.jpg" alt="Email Sequence Templates">
+                            <div class="resource-overlay">
+                                <span class="resource-type">Template</span>
+                            </div>
+                        </div>
+                        <div class="resource-card__content">
+                            <h3>Email Sequence Templates</h3>
+                            <p>Ready-to-use email nurture sequences that you can customize for your audience and business goals.</p>
+                            <a href="#" class="btn btn--primary btn--sm resource-download" data-resource="email-templates">Download Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Webinars Section -->
+        <section class="webinars">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">On-Demand Training</span>
+                    <h2 class="section-title">Expert <span class="gradient-text">Webinars</span></h2>
+                    <p class="section-subtitle">Watch our recorded webinars to learn directly from our team of experts.</p>
+                </div>
+                
+                <div class="webinars-grid">
+                    <div class="webinar-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="webinar-card__image">
+                            <img src="assets/webinar-1.jpg" alt="AI Automation Webinar">
+                            <div class="webinar-overlay">
+                                <span class="webinar-duration">45 min</span>
+                            </div>
+                        </div>
+                        <div class="webinar-card__content">
+                            <h3>Getting Started with AI Automation for Your Business</h3>
+                            <p>Learn the basics of identifying and implementing AI automation opportunities in your day-to-day operations.</p>
+                            <a href="#" class="btn btn--primary btn--sm webinar-watch" data-webinar="ai-automation">Watch Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="webinar-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="webinar-card__image">
+                            <img src="assets/webinar-2.jpg" alt="SEO in 2025 Webinar">
+                            <div class="webinar-overlay">
+                                <span class="webinar-duration">60 min</span>
+                            </div>
+                        </div>
+                        <div class="webinar-card__content">
+                            <h3>SEO in 2025: What's Working Now</h3>
+                            <p>A deep dive into the latest search engine optimization strategies that are driving results this year.</p>
+                            <a href="#" class="btn btn--primary btn--sm webinar-watch" data-webinar="seo-2025">Watch Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="webinar-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="webinar-card__image">
+                            <img src="assets/webinar-3.jpg" alt="Email Marketing Webinar">
+                            <div class="webinar-overlay">
+                                <span class="webinar-duration">50 min</span>
+                            </div>
+                        </div>
+                        <div class="webinar-card__content">
+                            <h3>Building Email Sequences That Convert</h3>
+                            <p>Step-by-step guidance on crafting email sequences that nurture leads and drive consistent conversions.</p>
+                            <a href="#" class="btn btn--primary btn--sm webinar-watch" data-webinar="email-sequences">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA Section -->
+        <section class="newsletter-cta">
+            <div class="container">
+                <div class="newsletter-wrapper" data-aos="fade-up">
+                    <div class="newsletter-content">
+                        <h2>Subscribe to Our <span class="gradient-text">Newsletter</span></h2>
+                        <p>Get weekly insights, tips, and resources delivered straight to your inbox. Stay up-to-date with the latest in AI marketing trends.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group newsletter-form-group">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn--primary">
+                                    Subscribe
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <p class="form-disclaimer">We'll never share your email and you can unsubscribe at any time.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/logo-light.png" alt="SquareStair Media Logo">
+                    </a>
+                    <p>AI-powered digital marketing solutions for small to mid-sized businesses, nonprofits, and entrepreneurs.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Services</h4>
+                        <ul class="footer__links">
+                            <li><a href="index.html#services">SEO Audits</a></li>
+                            <li><a href="index.html#services">Website Design</a></li>
+                            <li><a href="index.html#services">AI Automation</a></li>
+                            <li><a href="index.html#services">Content Strategy</a></li>
+                            <li><a href="index.html#services">Email Marketing</a></li>
+                            <li><a href="index.html#services">Lead Funnel Optimization</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Resources</h4>
+                        <ul class="footer__links">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="resources.html">Free Downloads</a></li>
+                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="resources.html#webinars">Webinars</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Company</h4>
+                        <ul class="footer__links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Consultant Program</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__subscribe">
+                    <h4 class="footer__heading">Join Our Newsletter</h4>
+                    <p>Get the latest insights on digital marketing and AI trends.</p>
+                    <form class="footer__form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 SquareStair Media. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+        </div>
+    </footer>
+
+    <!-- Resource Download Modal -->
+    <div class="modal" id="resource-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close Modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h3>Get Your Free Resource</h3>
+                <p>Fill out the form below to receive immediate access to your selected resource.</p>
+                <form id="modal-resource-form">
+                    <div class="form-group">
+                        <label for="modal-name">Full Name</label>
+                        <input type="text" id="modal-name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-email">Email Address</label>
+                        <input type="email" id="modal-email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-company">Company Name</label>
+                        <input type="text" id="modal-company" placeholder="Your Company">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--block">
+                        <span>Download Now</span>
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <p class="form-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Webinar Modal -->
+    <div class="modal" id="webinar-modal">
+        <div class="modal-content modal-content--large">
+            <button class="modal-close" aria-label="Close Modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <h3 id="webinar-title">Webinar Title</h3>
+                <div class="webinar-video-container">
+                    <div class="webinar-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Enter your email to watch this webinar</p>
+                    </div>
+                </div>
+                <form id="webinar-access-form">
+                    <div class="form-group">
+                        <label for="webinar-email">Email Address</label>
+                        <input type="email" id="webinar-email" required placeholder="you@example.com">
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--block">
+                        <span>Watch Now</span>
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <p class="form-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

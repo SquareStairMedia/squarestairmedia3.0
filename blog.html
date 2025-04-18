@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | SquareStair Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/" class="logo">
+                        <img src="assets/images/Logo4.png" alt="SquareStair Media Logo">
+                    </a>
+                </div>
+                <nav class="header__nav" id="main-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html" class="header__link">Home</a></li>
+                        <li><a href="index.html#services" class="header__link">Services</a></li>
+                        <li><a href="about.html" class="header__link">About</a></li>
+                        <li><a href="resources.html" class="header__link">Resources</a></li>
+                        <li><a href="blog.html" class="header__link active">Blog</a></li>
+                        <li><a href="contact.html" class="header__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cta">
+                    <a href="contact.html" class="btn btn--primary">Get Started</a>
+                </div>
+                <button class="header__toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for Blog Page -->
+        <section class="hero blog-hero">
+            <div class="container">
+                <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero__title">
+                        <span class="text-reveal">Digital Marketing</span>
+                        <span class="gradient-text text-reveal">Knowledge Hub</span>
+                    </h1>
+                    <p class="hero__subtitle">Insights, strategies, and expert advice to help you elevate your digital marketing and make the most of AI tools.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-layout">
+                    <!-- Main Blog Content -->
+                    <div class="blog-main">
+                        <!-- Featured Post -->
+                        <div class="blog-featured" data-aos="fade-up">
+                            <div class="blog-card featured">
+                                <div class="blog-card__image">
+                                    <img src="assets/blog-1.jpg" alt="AI Tools for Small Business">
+                                    <div class="blog-overlay">
+                                        <span class="blog-tag">Featured</span>
+                                        <span class="blog-category">AI & Automation</span>
+                                    </div>
+                                </div>
+                                <div class="blog-card__content">
+                                    <div class="blog-meta">
+                                        <span class="date">April 8, 2025</span>
+                                        <span class="read-time">6 min read</span>
+                                    </div>
+                                    <h3>5 AI Tools Every Small Business Should Be Using in 2025</h3>
+                                    <p>Discover the most impactful AI tools that can transform your operations and marketing without breaking the bank. From automated customer service to intelligent content creation, these tools are game-changers for small businesses looking to compete in today's digital landscape.</p>
+                                    <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Latest Posts -->
+                        <div class="blog-section">
+                            <h2 class="blog-section-title">Latest Articles</h2>
+                            
+                            <div class="blog-grid">
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-2.jpg" alt="Nonprofit Traffic Case Study">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">Case Study</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">March 22, 2025</span>
+                                            <span class="read-time">4 min read</span>
+                                        </div>
+                                        <h3>How We Doubled a Nonprofit's Organic Traffic in 60 Days</h3>
+                                        <p>A behind-the-scenes look at how our AI-powered SEO audit tools uncovered critical issues and helped implement effective solutions.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-3.jpg" alt="Email Automation Guide">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">Email Marketing</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">March 15, 2025</span>
+                                            <span class="read-time">7 min read</span>
+                                        </div>
+                                        <h3>The Small Business Guide to Email Automation</h3>
+                                        <p>Learn how to set up effective email sequences that nurture leads and convert customers without requiring constant manual work.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-4.jpg" alt="Content Marketing Strategies">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">Content Strategy</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">March 8, 2025</span>
+                                            <span class="read-time">5 min read</span>
+                                        </div>
+                                        <h3>Content Marketing Strategies That Build Authority in 2025</h3>
+                                        <p>Discover proven approaches to creating content that positions your brand as an industry authority while navigating AI content detection.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-5.jpg" alt="Landing Page Conversion Tips">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">Conversion</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">February 26, 2025</span>
+                                            <span class="read-time">6 min read</span>
+                                        </div>
+                                        <h3>7 Landing Page Elements That Boost Conversion Rates</h3>
+                                        <p>Implement these proven landing page strategies to significantly increase your conversion rates and maximize your marketing ROI.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-6.jpg" alt="AI for Content Creation">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">AI & Automation</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">February 19, 2025</span>
+                                            <span class="read-time">8 min read</span>
+                                        </div>
+                                        <h3>Using AI for Content Creation: Best Practices and Pitfalls</h3>
+                                        <p>Learn how to effectively leverage AI tools for content creation while maintaining your brand voice and avoiding common mistakes.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="blog-card" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="blog-card__image">
+                                        <img src="assets/blog-7.jpg" alt="Nonprofit Digital Strategy">
+                                        <div class="blog-overlay">
+                                            <span class="blog-category">Nonprofit</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-card__content">
+                                        <div class="blog-meta">
+                                            <span class="date">February 12, 2025</span>
+                                            <span class="read-time">5 min read</span>
+                                        </div>
+                                        <h3>Digital Strategy for Nonprofits on Limited Budgets</h3>
+                                        <p>Practical strategies for nonprofit organizations to maximize their digital presence and impact while working with constrained resources.</p>
+                                        <a href="blog-single.html" class="btn btn--outline btn--sm">Read Article</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="blog-pagination">
+                                <a href="#" class="pagination-link active">1</a>
+                                <a href="#" class="pagination-link">2</a>
+                                <a href="#" class="pagination-link">3</a>
+                                <span class="pagination-ellipsis">...</span>
+                                <a href="#" class="pagination-link">7</a>
+                                <a href="#" class="pagination-link next">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div class="blog-sidebar">
+                        <!-- Search -->
+                        <div class="sidebar-widget">
+                            <form class="blog-search">
+                                <input type="text" placeholder="Search articles...">
+                                <button type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Categories</h3>
+                            <ul class="category-list">
+                                <li><a href="#">AI & Automation <span>(12)</span></a></li>
+                                <li><a href="#">SEO <span>(8)</span></a></li>
+                                <li><a href="#">Content Strategy <span>(10)</span></a></li>
+                                <li><a href="#">Email Marketing <span>(6)</span></a></li>
+                                <li><a href="#">Conversion Optimization <span>(9)</span></a></li>
+                                <li><a href="#">Nonprofit Strategies <span>(7)</span></a></li>
+                                <li><a href="#">Case Studies <span>(5)</span></a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Popular Posts -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Popular Posts</h3>
+                            <div class="popular-posts">
+                                <div class="popular-post">
+                                    <div class="popular-post__image">
+                                        <img src="assets/blog-1-thumb.jpg" alt="AI Tools">
+                                    </div>
+                                    <div class="popular-post__content">
+                                        <h4><a href="#">5 AI Tools Every Small Business Should Be Using</a></h4>
+                                        <span class="date">April 8, 2025</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-post">
+                                    <div class="popular-post__image">
+                                        <img src="assets/blog-3-thumb.jpg" alt="Email Automation">
+                                    </div>
+                                    <div class="popular-post__content">
+                                        <h4><a href="#">The Small Business Guide to Email Automation</a></h4>
+                                        <span class="date">March 15, 2025</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="popular-post">
+                                    <div class="popular-post__image">
+                                        <img src="assets/blog-5-thumb.jpg" alt="Landing Pages">
+                                    </div>
+                                    <div class="popular-post__content">
+                                        <h4><a href="#">7 Landing Page Elements That Boost Conversion Rates</a></h4>
+                                        <span class="date">February 26, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="sidebar-widget">
+                            <h3 class="widget-title">Popular Tags</h3>
+                            <div class="tag-cloud">
+                                <a href="#" class="tag">AI</a>
+                                <a href="#" class="tag">Marketing</a>
+                                <a href="#" class="tag">SEO</a>
+                                <a href="#" class="tag">Email</a>
+                                <a href="#" class="tag">Content</a>
+                                <a href="#" class="tag">Automation</a>
+                                <a href="#" class="tag">Conversion</a>
+                                <a href="#" class="tag">Nonprofit</a>
+                                <a href="#" class="tag">Strategy</a>
+                                <a href="#" class="tag">Analytics</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Newsletter -->
+                        <div class="sidebar-widget newsletter-widget">
+                            <h3 class="widget-title">Subscribe to Our Newsletter</h3>
+                            <p>Get the latest marketing insights delivered to your inbox.</p>
+                            <form class="sidebar-newsletter">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn--primary btn--block">
+                                    Subscribe <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Topics Section -->
+        <section class="blog-topics">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Explore <span class="gradient-text">Topics</span></h2>
+                    <p class="section-subtitle">Dive deeper into our content collections by topic.</p>
+                </div>
+                
+                <div class="topics-grid">
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="topic-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI & Automation</h3>
+                        <p>12 Articles</p>
+                    </a>
+                    
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="topic-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Strategies</h3>
+                        <p>8 Articles</p>
+                    </a>
+                    
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="topic-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Content Creation</h3>
+                        <p>10 Articles</p>
+                    </a>
+                    
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="topic-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Marketing</h3>
+                        <p>6 Articles</p>
+                    </a>
+                    
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="topic-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics & ROI</h3>
+                        <p>9 Articles</p>
+                    </a>
+                    
+                    <a href="#" class="topic-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="topic-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Nonprofit Strategies</h3>
+                        <p>7 Articles</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="cta-banner">
+            <div class="container">
+                <div class="cta-banner__content" data-aos="fade-up">
+                    <h2>Stay Updated with the Latest Insights</h2>
+                    <p>Subscribe to our newsletter and get weekly tips, strategies, and resources delivered straight to your inbox.</p>
+                    <a href="#" class="btn btn--light">Subscribe Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/logo-light.png" alt="SquareStair Media Logo">
+                    </a>
+                    <p>AI-powered digital marketing solutions for small to mid-sized businesses, nonprofits, and entrepreneurs.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Services</h4>
+                        <ul class="footer__links">
+                            <li><a href="index.html#services">SEO Audits</a></li>
+                            <li><a href="index.html#services">Website Design</a></li>
+                            <li><a href="index.html#services">AI Automation</a></li>
+                            <li><a href="index.html#services">Content Strategy</a></li>
+                            <li><a href="index.html#services">Email Marketing</a></li>
+                            <li><a href="index.html#services">Lead Funnel Optimization</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Resources</h4>
+                        <ul class="footer__links">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="resources.html">Free Downloads</a></li>
+                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="resources.html#webinars">Webinars</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Company</h4>
+                        <ul class="footer__links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Consultant Program</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__subscribe">
+                    <h4 class="footer__heading">Join Our Newsletter</h4>
+                    <p>Get the latest insights on digital marketing and AI trends.</p>
+                    <form class="footer__form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 SquareStair Media. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

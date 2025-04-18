@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SquareStair Media</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/" class="logo">
+                        <img src="assets/images/Logo4.png" alt="SquareStair Media Logo">
+                    </a>
+                </div>
+                <nav class="header__nav" id="main-nav">
+                    <ul class="header__menu">
+                        <li><a href="index.html" class="header__link">Home</a></li>
+                        <li><a href="index.html#services" class="header__link">Services</a></li>
+                        <li><a href="about.html" class="header__link active">About</a></li>
+                        <li><a href="resources.html" class="header__link">Resources</a></li>
+                        <li><a href="blog.html" class="header__link">Blog</a></li>
+                        <li><a href="contact.html" class="header__link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cta">
+                    <a href="contact.html" class="btn btn--primary">Get Started</a>
+                </div>
+                <button class="header__toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section for About Page -->
+        <section class="hero about-hero">
+            <div class="container">
+                <div class="hero__content" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero__title">
+                        <span class="text-reveal">About</span>
+                        <span class="gradient-text text-reveal">SquareStair Media</span>
+                    </h1>
+                    <p class="hero__subtitle">Learn about our mission, vision, and the team behind our AI-powered marketing solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main About Section (moved from index.html) -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__text" data-aos="fade-right">
+                        <span class="section-tagline">Our Story</span>
+                        <h2 class="section-title">Bridging Technology and <span class="gradient-text">Human Creativity</span></h2>
+                        <p>Founded in 2023 by Julie C. in Toronto, SquareStair Media was born from a passion for making cutting-edge AI and digital strategy tools accessible to small businesses and nonprofits.</p>
+                        <p>Frustrated by cookie-cutter solutions and a lack of AI tools being offered to business owners, Julie built SquareStair Media to offer lean, smart, customizable systems powered by modern technology and a personal touch.</p>
+                        
+                        <div class="about__features">
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="feature__text">
+                                    <h4>AI-First Approach</h4>
+                                    <p>Leveraging artificial intelligence to deliver smarter, faster results</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="feature__text">
+                                    <h4>Real-World ROI</h4>
+                                    <p>Focused on measurable outcomes that impact your bottom line</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="feature__text">
+                                    <h4>Client Partnership</h4>
+                                    <p>Working together as an extension of your team, not just a vendor</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn--primary">Work With Us</a>
+                    </div>
+                    
+                    <div class="about__media" data-aos="fade-left" data-aos-delay="200">
+                        <div class="about__image">
+                            <img src="assets/about-image.jpg" alt="SquareStair Media Team">
+                        </div>
+                        <div class="about__stats">
+                            <div class="stat-card">
+                                <h3 class="counter" data-target="2023">0</h3>
+                                <p>Founded</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3 class="counter" data-target="40">0</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3 class="counter" data-target="15">0</h3>
+                                <p>Team Members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission and Values Section (new content) -->
+        <section class="mission-values">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">Our Mission & Values</span>
+                    <h2 class="section-title">What Drives <span class="gradient-text">Our Work</span></h2>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-card__icon">
+                            <div class="icon-bg">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                        </div>
+                        <h3 class="value-card__title">Innovation</h3>
+                        <p class="value-card__desc">We're constantly exploring new AI technologies and approaches to deliver better results for our clients.</p>
+                    </div>
+                    
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-card__icon">
+                            <div class="icon-bg">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <h3 class="value-card__title">Partnership</h3>
+                        <p class="value-card__desc">We see ourselves as an extension of your team, working collaboratively toward shared goals.</p>
+                    </div>
+                    
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-card__icon">
+                            <div class="icon-bg">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                        </div>
+                        <h3 class="value-card__title">Integrity</h3>
+                        <p class="value-card__desc">We're committed to transparent practices, honest communication, and ethical applications of AI.</p>
+                    </div>
+                    
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="value-card__icon">
+                            <div class="icon-bg">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <h3 class="value-card__title">Results-Driven</h3>
+                        <p class="value-card__desc">We measure our success by the tangible outcomes we deliver for our clients' businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Section (expanded from questionnaire) -->
+        <section class="audience">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">Who We Serve</span>
+                    <h2 class="section-title">Our <span class="gradient-text">Ideal Clients</span></h2>
+                </div>
+                
+                <div class="audience-grid">
+                    <div class="audience-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="audience-card__icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="audience-card__title">Small to Mid-sized Businesses</h3>
+                        <p class="audience-card__desc">Professional services, digital publishing, wellness, and other specialized industries seeking to leverage AI without a massive budget.</p>
+                    </div>
+                    
+                    <div class="audience-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="audience-card__icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="audience-card__title">Solo Entrepreneurs & Startups</h3>
+                        <p class="audience-card__desc">Early-stage ventures needing a nimble, affordable team to help establish and grow their digital presence.</p>
+                    </div>
+                    
+                    <div class="audience-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="audience-card__icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="audience-card__title">Nonprofits</h3>
+                        <p class="audience-card__desc">Organizations looking to gain an edge with AI tools and increase their impact without huge marketing budgets.</p>
+                    </div>
+                    
+                    <div class="audience-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="audience-card__icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="audience-card__title">Marketing Professionals</h3>
+                        <p class="audience-card__desc">In-house marketers looking to enhance their capabilities with automation and AI-powered insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tagline">Meet Our Founder</span>
+                    <h2 class="section-title">The <span class="gradient-text">Driving Force</span></h2>
+                </div>
+                
+                <div class="founder-profile" data-aos="fade-up">
+                    <div class="founder-image">
+                        <img src="assets/julie-profile.jpg" alt="Julie C. - Founder">
+                    </div>
+                    <div class="founder-content">
+                        <h3>Julie C.</h3>
+                        <p class="founder-title">Founder & Digital Strategy Director</p>
+                        <p class="founder-bio">Julie founded SquareStair Media in 2023 with a vision of democratizing access to cutting-edge AI marketing tools. With a background in both technology and marketing, she bridges the gap between complex AI systems and practical business applications.</p>
+                        <p class="founder-bio">She is currently developing an Independent Consultant (IC) program to allow skilled freelancers and consultants from around the world to partner with SquareStair Media under a unified brand.</p>
+                        <div class="founder-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-banner">
+            <div class="container">
+                <div class="cta-banner__content" data-aos="fade-up">
+                    <h2>Ready to Work With Us?</h2>
+                    <p>Let's discuss how our AI-powered solutions can transform your digital marketing strategy.</p>
+                    <a href="contact.html" class="btn btn--light">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/logo-light.png" alt="SquareStair Media Logo">
+                    </a>
+                    <p>AI-powered digital marketing solutions for small to mid-sized businesses, nonprofits, and entrepreneurs.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__nav">
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Services</h4>
+                        <ul class="footer__links">
+                            <li><a href="index.html#services">SEO Audits</a></li>
+                            <li><a href="index.html#services">Website Design</a></li>
+                            <li><a href="index.html#services">AI Automation</a></li>
+                            <li><a href="index.html#services">Content Strategy</a></li>
+                            <li><a href="index.html#services">Email Marketing</a></li>
+                            <li><a href="index.html#services">Lead Funnel Optimization</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Resources</h4>
+                        <ul class="footer__links">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="resources.html">Free Downloads</a></li>
+                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="resources.html">Webinars</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__col">
+                        <h4 class="footer__heading">Company</h4>
+                        <ul class="footer__links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Consultant Program</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__subscribe">
+                    <h4 class="footer__heading">Join Our Newsletter</h4>
+                    <p>Get the latest insights on digital marketing and AI trends.</p>
+                    <form class="footer__form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 SquareStair Media. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-shapes">
+            <div class="footer-shape footer-shape-1"></div>
+            <div class="footer-shape footer-shape-2"></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
