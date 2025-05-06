@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SquareStair Media | Efficiency Survey</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #fefdf9;
+      padding: 2rem 1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      max-width: 160px;
+      height: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .subheadline {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      resize: vertical;
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.9rem 1.2rem;
+      background-color: #f4c542;
+      color: #111;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e9b200;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+        .ai-response {
+    margin-top: 2rem;
+    background: #fffbea;
+    border-left: 6px solid #f4c542;
+    padding: 2rem;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    line-height: 1.6;
+    }
+
+
+    .loading {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+
+    .ai-response h1, 
+.ai-response h2, 
+.ai-response h3 {
+  margin-top: 1.2rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.ai-response p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.ai-response ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ai-response ul li {
+  margin-bottom: 0.5rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="assets/images/Logo4.png" alt="SquareStair Media Logo" />
+  </div>
+
+  <h1>Discover Where AI Can Save You Time</h1>
+  <p class="subheadline">Answer 5 quick questions to receive a personalized efficiency audit</p>
+
+  <form id="survey-form">
+    <div>
+      <label for="q1">1. How would you briefly describe your business or organization?</label>
+      <textarea id="q1" required></textarea>
+    </div>
+    <div>
+      <label for="q2">2. How do most of your customers or clients first get in touch with your business?</label>
+      <textarea id="q2" required></textarea>
+    </div>
+    <div>
+      <label for="q3">3. Do you currently track customer or client information in a system? If so, how?</label>
+      <textarea id="q3" required></textarea>
+    </div>
+    <div>
+      <label for="q4">4. Are there any daily or weekly tasks you or your team repeat manually?</label>
+      <textarea id="q4" required></textarea>
+    </div>
+    <div>
+      <label for="q5">5. What part of your current operations feels most time-consuming or frustrating?</label>
+      <textarea id="q5" required></textarea>
+    </div>
+
+    <div class="action-buttons">
+      <button type="submit">Give me the basic report</button>
+    </div>
+  </form>
+
+  <div class="loading hidden" id="loading">Generating your AI-powered audit...</div>
+  <div class="ai-response hidden" id="ai-response"></div>
+  <div class="action-buttons hidden" id="download-button-container">
+    <button id="download-pdf">Download as PDF</button>
+    <button id="deeper-audit-button" style="margin-top: 1rem; background:#333; color:white;" onclick="window.location.href='survey2.html'">
+        Show Me a Customized Report
+      </button>
+  </div>  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    const form = document.getElementById('survey-form');
+    const loading = document.getElementById('loading');
+    const responseBox = document.getElementById('ai-response');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      loading.classList.remove('hidden');
+      responseBox.classList.add('hidden');
+
+      const answers = [
+        document.getElementById('q1').value.trim(),
+        document.getElementById('q2').value.trim(),
+        document.getElementById('q3').value.trim(),
+        document.getElementById('q4').value.trim(),
+        document.getElementById('q5').value.trim()
+      ];
+
+      try {
+        const res = await fetch('/api/survey', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ responses: answers })
+        });
+
+        const data = await res.json();
+        loading.classList.add('hidden');
+
+        if (data.report) {
+            responseBox.innerHTML = marked.parse(data.report);
+            responseBox.classList.remove('hidden');
+            downloadContainer.classList.remove('hidden');
+        } else {
+          responseBox.textContent = 'Something went wrong. Please try again.';
+          responseBox.classList.remove('hidden');
+        }
+      } catch (err) {
+        console.error(err);
+        loading.classList.add('hidden');
+        responseBox.textContent = 'There was a server error. Please try again later.';
+        responseBox.classList.remove('hidden');
+      }
+    });
+    
+    const downloadButton = document.getElementById('download-pdf');
+const downloadContainer = document.getElementById('download-button-container');
+
+downloadButton.addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  const content = document.getElementById('ai-response').innerText;
+
+  const lines = doc.splitTextToSize(content, 180);
+  doc.text(lines, 15, 20);
+  doc.save('efficiency-audit.pdf');
+});
+
+
+  </script>
+</body>
+</html>

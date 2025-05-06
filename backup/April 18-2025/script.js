@@ -1,9 +1,7 @@
-
-import { db, storage } from './firebase-config.js';
-import { ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
-
-console.log("Firebase DB object:", db);
-console.log("Firebase Storage object:", storage);
+/**
+ * SquareStair Media - Main JavaScript
+ * Handles all interactive elements, animations, and functionality
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate on Scroll)
@@ -232,36 +230,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = '';
             }
         });
- 
-if (resourceForm) {
-    resourceForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('modal-name').value;
-        const email = document.getElementById('modal-email').value;
-        const company = document.getElementById('modal-company').value;
-
-        if (!name || !email) {
-            alert('Please fill in the required fields.');
-            return;
+        
+        // Submit form
+        if (resourceForm) {
+            resourceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const name = document.getElementById('modal-name').value;
+                const email = document.getElementById('modal-email').value;
+                const company = document.getElementById('modal-company').value;
+                const resourceType = resourceForm.getAttribute('data-resource');
+                
+                // Handle form submission
+                // This would typically be an AJAX call to your server
+                console.log('Resource Form Submitted:', { name, email, company, resourceType });
+                
+                // Simulate success and show thank you message
+                const formContent = resourceForm.innerHTML;
+                resourceForm.innerHTML = `
+                    <div class="form-success">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Thank You!</h3>
+                        <p>Your resource has been sent to your email.</p>
+                        <button type="button" class="btn btn--primary btn--sm close-success">Close</button>
+                    </div>
+                `;
+                
+                // Add event listener to close button
+                const closeBtn = resourceForm.querySelector('.close-success');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = '';
+                        
+                        // Reset form after a delay
+                        setTimeout(() => {
+                            resourceForm.innerHTML = formContent;
+                            document.getElementById('modal-name').value = '';
+                            document.getElementById('modal-email').value = '';
+                            document.getElementById('modal-company').value = '';
+                        }, 500);
+                    });
+                }
+            });
         }
-
-        try {
-            const fileRef = ref(storage, 'resources/Digital Strategy for Nonprofits on Limited Budgets.pdf');
-            const downloadURL = await getDownloadURL(fileRef);
-
-            window.open(downloadURL, '_blank');
-
-            resourceForm.reset();
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        } catch (error) {
-            console.error('Error fetching file:', error);
-            alert('Sorry, there was a problem delivering your resource.');
-        }
-    });
-}
-
     }
     
     // === Contact Form Submission ===

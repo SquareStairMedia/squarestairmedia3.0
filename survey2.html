@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SquareStair Media | AI Diagnostic</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #fefdf9;
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .chat-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      padding: 1rem;
+      min-height: 300px;
+      margin-bottom: 1rem;
+    }
+
+    .chat-message {
+      margin: 1rem 0;
+      line-height: 1.5;
+    }
+
+    .user { text-align: right; font-weight: 600; color: #444; }
+    .assistant { text-align: left; font-weight: 500; color: #222; }
+
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button {
+      background: #f4c542;
+      font-weight: 700;
+      padding: 0.9rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e9b200;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">SquareStair Diagnostic</h1>
+  <p class="subheadline" style="text-align:center;">Let’s go deeper. This audit adapts to your answers — one question at a time.</p>
+
+  <div class="form-section" id="intro-form">
+    <label for="name">Your First Name:</label>
+    <input type="text" id="name" required />
+
+    <label for="company">Your Business Name:</label>
+    <input type="text" id="company" required />
+
+    <button id="start-chat">Start Diagnostic</button>
+  </div>
+
+  <div class="chat-box hidden" id="chat-box"></div>
+
+  <div class="form-section hidden" id="response-form">
+    <textarea id="user-response" placeholder="Type your answer..." required></textarea>
+    <button id="submit-response">Submit</button>
+  </div>
+
+  <script>
+    const startBtn = document.getElementById('start-chat');
+    const introForm = document.getElementById('intro-form');
+    const chatBox = document.getElementById('chat-box');
+    const responseForm = document.getElementById('response-form');
+    const userResponseInput = document.getElementById('user-response');
+
+    let threadId = null;
+    let questionCount = 0;
+
+    const nameInput = document.getElementById('name');
+    const companyInput = document.getElementById('company');
+
+    function appendMessage(content, sender) {
+      const div = document.createElement('div');
+      div.className = `chat-message ${sender}`;
+      div.textContent = content;
+      chatBox.appendChild(div);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function applyBrandVoice(text) {
+  return text
+    .replace(/Make\.com/gi, "SquareStair Media's automation tools")
+    .replace(/Zapier/gi, "SquareStair Media systems")
+    .replace(/You can use AI to/gi, "SquareStair Media helps businesses use AI to")
+    .replace(/Our AI assistant/gi, "SquareStair Media's diagnostic system")
+    .replace(/With ChatGPT/gi, "With custom implementation from SquareStair Media")
+    .replace(/OpenAI/gi, "AI"); // Only if context allows
+}
+
+    startBtn.addEventListener('click', async () => {
+      const name = nameInput.value.trim();
+      const company = companyInput.value.trim();
+      if (!name || !company) return alert('Please enter both your name and company.');
+
+      introForm.classList.add('hidden');
+      chatBox.classList.remove('hidden');
+      responseForm.classList.remove('hidden');
+
+      // Gather survey1 answers from sessionStorage
+      const surveyAnswers = [
+        sessionStorage.getItem('q1'),
+        sessionStorage.getItem('q2'),
+        sessionStorage.getItem('q3'),
+        sessionStorage.getItem('q4'),
+        sessionStorage.getItem('q5')
+      ];
+
+      const introMessage = 
+        `Client name: ${name}\nBusiness name: ${company}\n` +
+        `Initial Survey Responses:\n` +
+        surveyAnswers.map((val, i) => `Q${i+1}: ${val || '[No answer]'}`).join('\n');
+
+        // Show loading indicator
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'chat-message assistant';
+        loadingDiv.id = 'loading';
+        loadingDiv.textContent = '(Setting things up, one moment...)';
+        chatBox.appendChild(loadingDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      
+        const res = await fetch('/api/survey2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: introMessage })
+      });
+
+      const data = await res.json();
+      // Remove loading
+      const loadingEl = document.getElementById('loading');
+      if (loadingEl) loadingEl.remove();
+      if (data.reply) {
+        const rewrittenReply = applyBrandVoice(data.reply);
+        appendMessage(rewrittenReply, 'assistant');
+        threadId = data.threadId;
+        questionCount = 1;
+      } else {
+        appendMessage('Sorry, something went wrong.', 'assistant');
+      }
+    });
+
+    document.getElementById('submit-response').addEventListener('click', async () => {
+      const input = userResponseInput.value.trim();
+      if (!input || !threadId) return;
+
+      appendMessage(input, 'user');
+      userResponseInput.value = '';
+
+      const res = await fetch('/api/survey2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input, threadId })
+      });
+
+      const data = await res.json();
+      if (data.reply) {
+        // Show loading indicator
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'chat-message assistant';
+        loadingDiv.id = 'loading';
+        loadingDiv.textContent = '(...one moment)';
+        chatBox.appendChild(loadingDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Fetch assistant reply
+        const res = await fetch('/api/survey2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input, threadId })
+        });
+        const data = await res.json();
+
+        // Remove loading
+        const loadingEl = document.getElementById('loading');
+        if (loadingEl) loadingEl.remove();
+
+        // Show reply
+        if (data.reply) {
+            const rewrittenReply = applyBrandVoice(data.reply);
+            appendMessage(rewrittenReply, 'assistant');
+        questionCount++;
+        } else {
+        appendMessage('There was a problem processing that.', 'assistant');
+        }
+
+      } else {
+        appendMessage('There was a problem processing that.', 'assistant');
+      }
+    });
+  </script>
+</body>
+</html>
