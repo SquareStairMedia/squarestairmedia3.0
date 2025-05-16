@@ -389,5 +389,73 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script type="module" src="script.js"></script>
+
+<script>
+  // Set up form listener
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const company = document.getElementById('contact-company').value || '';
+      const phone = document.getElementById('contact-phone').value || '';
+      const service = document.getElementById('contact-service').value || '';
+      const message = document.getElementById('contact-message').value || '';
+      
+      // Update button to show progress
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      submitButton.disabled = true;
+      
+      try {
+        // Send to your server endpoint
+        const response = await fetch('/api/contact-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            company,
+            phone,
+            service,
+            message,
+            timestamp: new Date().toISOString()
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        // Show success message
+        contactForm.innerHTML = `
+          <div class="form-success">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent!</h3>
+            <p>Thank you for your message. We'll be in touch shortly.</p>
+            <p>Reference ID: ${result.id}</p>
+          </div>
+        `;
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        
+        // Show error message
+        alert("There was an error submitting your form. Please try again or contact us directly.");
+        
+        // Reset button
+        submitButton.innerHTML = 'Book My Call <i class="fas fa-calendar-check"></i>';
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>
 </body>
 </html>

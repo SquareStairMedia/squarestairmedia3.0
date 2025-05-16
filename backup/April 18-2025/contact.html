@@ -390,5 +390,84 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 
+<!-- Firebase SDK -->
+<script type="module">
+  import { saveContactForm } from './firebase-config.js';
+  
+  // Get the contact form
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.innerHTML;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      submitButton.disabled = true;
+      
+      // Get form data
+      const formData = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        company: document.getElementById('contact-company').value || '',
+        phone: document.getElementById('contact-phone').value || '',
+        service: document.getElementById('contact-service').value || '',
+        message: document.getElementById('contact-message').value || '',
+        timestamp: new Date().toISOString(),
+        submittedAt: new Date(),
+        source: 'contact-page'
+      };
+      
+      try {
+        // Save to Firestore
+        const result = await saveContactForm(formData);
+        
+        if (result.success) {
+          // Show success message
+          const formContent = contactForm.innerHTML;
+          contactForm.innerHTML = `
+            <div class="form-success">
+              <i class="fas fa-check-circle"></i>
+              <h3>Message Sent!</h3>
+              <p>We'll be in touch with you shortly.</p>
+            </div>
+          `;
+          
+          // Reset form after a delay
+          setTimeout(() => {
+            contactForm.innerHTML = formContent;
+            document.getElementById('contact-name').value = '';
+            document.getElementById('contact-email').value = '';
+            document.getElementById('contact-company').value = '';
+            document.getElementById('contact-phone').value = '';
+            document.getElementById('contact-service').value = '';
+            document.getElementById('contact-message').value = '';
+            
+            // Reset button
+            const newSubmitButton = contactForm.querySelector('button[type="submit"]');
+            if (newSubmitButton) {
+              newSubmitButton.innerHTML = originalButtonText;
+              newSubmitButton.disabled = false;
+            }
+          }, 5000);
+        } else {
+          throw new Error(result.error);
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        
+        // Show error message
+        alert("There was an error submitting your form. Please try again.");
+        
+        // Reset button
+        submitButton.innerHTML = originalButtonText;
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>
+
 </body>
 </html>

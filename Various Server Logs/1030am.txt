@@ -1,0 +1,10 @@
+PS C:\Users\mcder\Documents\Personal Files\Stephen\SquareStair\3.0> node server.js
+(node:7776) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/mcder/Documents/Personal%20Files/Stephen/SquareStair/3.0/server.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\mcder\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Firebase Admin SDK initialized with proper credentials and '(default)' database ID
+(node:7776) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Server listening on port 5000
+Testing Firestore connectivity with explicit collection name...
+Test document written successfully with ID: rfmt9Wff2Qsxc9H8otja
