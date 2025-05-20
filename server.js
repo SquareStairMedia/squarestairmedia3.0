@@ -29,7 +29,7 @@ try {
   // Configure Firestore settings
   db.settings({
     projectId: serviceAccount.project_id,
-    databaseId: '(default)'
+    databaseId: '(default)' // Naming the database '(default)' avoids persistent error: Firestore Repeatedly Returning Error: 5 NOT_FOUND 
   });
   
   console.log("Firebase Admin SDK initialized with proper credentials and '(default)' database ID");
