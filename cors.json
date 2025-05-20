@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:5000", "https://www.squarestairmedia.com"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
