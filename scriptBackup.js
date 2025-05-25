@@ -1,10 +1,11 @@
+/**
+ * SquareStair Media - Main JavaScript
+ * Handles all interactive elements, animations, and functionality
+ */
 
 import { db, storage } from './firebase-config.js';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 import { ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
-
-console.log("Firebase DB object:", db);
-console.log("Firebase Storage object:", storage);
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS (Animate on Scroll)
@@ -233,14 +234,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = '';
             }
         });
- 
+        
+        // Submit form
 if (resourceForm) {
     resourceForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('modal-name').value;
-        const email = document.getElementById('modal-email').value;
-        const company = document.getElementById('modal-company').value;
+        const name = resourceForm.querySelector('#modal-name')?.value.trim();
+        const email = resourceForm.querySelector('#modal-email')?.value.trim();
+        const company = resourceForm.querySelector('#modal-company')?.value.trim();
+        const resourceType = resourceForm.getAttribute('data-resource');
 
         if (!name || !email) {
             alert('Please fill in the required fields.');
@@ -248,35 +251,48 @@ if (resourceForm) {
         }
 
         try {
-            const fileRef = ref(storage, 'resources/Digital Strategy for Nonprofits on Limited Budgets.pdf');
-            const downloadURL = await getDownloadURL(fileRef);
+            const formData = {
+                name,
+                email,
+                company,
+                resourceType,
+                timestamp: new Date().toISOString()
+            };
 
-            window.open(downloadURL, '_blank');
+            const docRef = await addDoc(collection(db, "resourceDownloads"), formData);
+            console.log("Contact info saved with ID:", docRef.id);
 
-            resourceForm.reset();
+                const downloadLinks = {
+                // "seo-checklist": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2F2025-SEO-Optimization-Checklist.pdf?alt=media",
+                "ai-playbook": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FAI-Web-Strategy-Playbook-for-Small-Businesses.pdf?alt=media&token=1239e6b2-90bf-4425-b1c1-687ef5d2c515",
+                // "landing-template": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FLanding-Page-Templates.pdf?alt=media",
+                // "content-calendar": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FContent-Strategy-Calendar.pdf?alt=media",
+                "nonprofit-ai": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FDigital-Strategy-for-Nonprofits-on-Limited-Budgets.pdf?alt=media&token=9e5c2fb6-8bdf-455b-a774-16c202bd097f",
+                // "email-templates": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FEmail-Sequence-Templates.pdf?alt=media"
+                };
+
+            const downloadUrl = downloadLinks[resourceType];
+
+            if (downloadUrl) {
+                window.open(downloadUrl, '_blank');
+            } else {
+                alert('Download link not found for selected resource.');
+            }
+
             modal.classList.remove('active');
             document.body.style.overflow = '';
+            resourceForm.reset();
+
         } catch (error) {
-            console.error('Error fetching file:', error);
-            alert('Sorry, there was a problem delivering your resource.');
+            console.error("Error saving contact info:", error);
+            alert('An error occurred. Please try again later.');
         }
     });
 }
-
     }
     
     // === Contact Form Submission ===
     const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById('contact-name').value.trim();
-  const email = document.getElementById('contact-email').value.trim();
-  const company = document.getElementById('contact-company').value.trim();
-  const phone = document.getElementById('contact-phone').value.trim();
-  const message = document.getElementById('contact-message').valu
-
     
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -362,41 +378,44 @@ if (resourceForm) {
     }
     
     // === Smooth Scroll for Anchor Links ===
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                // Close mobile menu if open
-                const mobileNav = document.querySelector('.mobile-nav');
-                const overlay = document.querySelector('.overlay');
-                const menuToggle = document.getElementById('menu-toggle');
-                
-                if (mobileNav && mobileNav.classList.contains('active')) {
-                    mobileNav.classList.remove('active');
-                    overlay.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-                
-                // Calculate header height for offset
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Update active link
-                document.querySelectorAll('.header__link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                this.classList.add('active');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+        if (target) {
+            // Close mobile menu if open
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.overlay');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            if (mobileNav && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
-        });
+
+            // Calculate header height for offset
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Update active link
+            document.querySelectorAll('.header__link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            this.classList.add('active');
+        }
     });
+});
 
 // === FAQ Toggle ===
 const faqItems = document.querySelectorAll('.faq-item');

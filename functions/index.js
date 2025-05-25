@@ -7,7 +7,20 @@ admin.initializeApp();
 
 exports.downloadResource = functions.https.onRequest((req, res) => {
   cors(req, res, async () => {
-    const filePath = 'resources/Digital Strategy for Nonprofits on Limited Budgets.pdf';
+    let filePath = '';
+    let downloadName = '';
+
+    // Determine the requested resource
+    if (req.query.resource === 'nonprofit-ai') {
+      filePath = 'resources/Digital-Strategy-for-Nonprofits-on-Limited-Budgets.pdf';
+      downloadName = 'Digital-Strategy-for-Nonprofits-on-Limited-Budgets.pdf';
+    } else if (req.query.resource === 'ai-playbook') {
+      filePath = 'resources/AI-Web-Strategy-Playbook-for-Small-Businesses.pdf';
+      downloadName = 'AI-Web-Strategy-Playbook-for-Small-Businesses.pdf';
+    } else {
+      return res.status(400).send('Invalid resource type.');
+    }
+
     const bucket = getStorage().bucket();
 
     try {
@@ -19,7 +32,7 @@ exports.downloadResource = functions.https.onRequest((req, res) => {
       }
 
       res.setHeader('Content-Type', 'application/pdf');
-      res.setHeader('Content-Disposition', 'attachment; filename="Digital Strategy for Nonprofits on Limited Budgets.pdf"');
+      res.setHeader('Content-Disposition', `attachment; filename="${downloadName}"`);
 
       file.createReadStream().pipe(res);
     } catch (error) {

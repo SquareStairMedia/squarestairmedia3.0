@@ -4,6 +4,7 @@
  */
 
 import { db, storage } from './firebase-config.js';
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 import { ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -235,32 +236,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Submit form
-        if (resourceForm) {
-            resourceForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
+if (resourceForm) {
+    resourceForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-                const name = document.getElementById('modal-name').value;
-                const email = document.getElementById('modal-email').value;
-                const company = document.getElementById('modal-company').value;
+        const name = resourceForm.querySelector('#modal-name')?.value.trim();
+        const email = resourceForm.querySelector('#modal-email')?.value.trim();
+        const company = resourceForm.querySelector('#modal-company')?.value.trim();
+        const resourceType = resourceForm.getAttribute('data-resource');
 
-                if (!name || !email) {
-                    alert('Please fill in the required fields.');
-                    return;
-                }
-
-                try {
-                    const cloudFunctionUrl = 'https://us-central1-squarestair-media-457216.cloudfunctions.net/downloadResource';
-                    window.open(cloudFunctionUrl, '_blank');
-
-                    resourceForm.reset();
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                } catch (error) {
-                    console.error('Error fetching file:', error);
-                    alert('Sorry, there was a problem delivering your resource.');
-                }
-            });
+        if (!name || !email) {
+            alert('Please fill in the required fields.');
+            return;
         }
+
+        try {
+            const formData = {
+                name,
+                email,
+                company,
+                resourceType,
+                timestamp: new Date().toISOString()
+            };
+
+            const docRef = await addDoc(collection(db, "resourceDownloads"), formData);
+            console.log("Contact info saved with ID:", docRef.id);
+
+                const downloadLinks = {
+                // "seo-checklist": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2F2025-SEO-Optimization-Checklist.pdf?alt=media",
+                "ai-playbook": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FAI-Web-Strategy-Playbook-for-Small-Businesses.pdf?alt=media&token=1239e6b2-90bf-4425-b1c1-687ef5d2c515",
+                // "landing-template": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FLanding-Page-Templates.pdf?alt=media",
+                // "content-calendar": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FContent-Strategy-Calendar.pdf?alt=media",
+                "nonprofit-ai": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FDigital-Strategy-for-Nonprofits-on-Limited-Budgets.pdf?alt=media&token=9e5c2fb6-8bdf-455b-a774-16c202bd097f",
+                // "email-templates": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FEmail-Sequence-Templates.pdf?alt=media"
+                };
+
+            const downloadUrl = downloadLinks[resourceType];
+
+            if (downloadUrl) {
+                window.open(downloadUrl, '_blank');
+            } else {
+                alert('Download link not found for selected resource.');
+            }
+
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            resourceForm.reset();
+
+        } catch (error) {
+            console.error("Error saving contact info:", error);
+            alert('An error occurred. Please try again later.');
+        }
+    });
+}
     }
     
     // === Contact Form Submission ===
@@ -350,41 +378,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // === Smooth Scroll for Anchor Links ===
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                // Close mobile menu if open
-                const mobileNav = document.querySelector('.mobile-nav');
-                const overlay = document.querySelector('.overlay');
-                const menuToggle = document.getElementById('menu-toggle');
-                
-                if (mobileNav && mobileNav.classList.contains('active')) {
-                    mobileNav.classList.remove('active');
-                    overlay.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-                
-                // Calculate header height for offset
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Update active link
-                document.querySelectorAll('.header__link').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                this.classList.add('active');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+        if (target) {
+            // Close mobile menu if open
+            const mobileNav = document.querySelector('.mobile-nav');
+            const overlay = document.querySelector('.overlay');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            if (mobileNav && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                menuToggle.classList.remove('active');
             }
-        });
+
+            // Calculate header height for offset
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            // Update active link
+            document.querySelectorAll('.header__link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            this.classList.add('active');
+        }
     });
+});
 
 // === FAQ Toggle ===
 const faqItems = document.querySelectorAll('.faq-item');
