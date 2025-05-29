@@ -1,6 +1,7 @@
 /**
  * SquareStair Media - Main JavaScript
- * Handles all interactive elements, animations, and functionality
+ * Handles primary interactive elements, animations, and functionality
+ * Script for modals can be found in modal.js
  */
 
 import { db, storage } from './firebase-config.js';
@@ -265,7 +266,7 @@ if (resourceForm) {
                 const downloadLinks = {
                 // "seo-checklist": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2F2025-SEO-Optimization-Checklist.pdf?alt=media",
                 "ai-playbook": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FAI-Web-Strategy-Playbook-for-Small-Businesses.pdf?alt=media&token=1239e6b2-90bf-4425-b1c1-687ef5d2c515",
-                // "landing-template": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FLanding-Page-Templates.pdf?alt=media",
+                "ai-intro": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FIntroduction-to-AI-for-Business.pdf?alt=media&token=1239e6b2-90bf-4425-b1c1-687ef5d2c515",
                 // "content-calendar": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FContent-Strategy-Calendar.pdf?alt=media",
                 "nonprofit-ai": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.firebasestorage.app/o/resources%2FDigital-Strategy-for-Nonprofits-on-Limited-Budgets.pdf?alt=media&token=9e5c2fb6-8bdf-455b-a774-16c202bd097f",
                 // "email-templates": "https://firebasestorage.googleapis.com/v0/b/squarestair-media-457216.appspot.com/o/resources%2FEmail-Sequence-Templates.pdf?alt=media"

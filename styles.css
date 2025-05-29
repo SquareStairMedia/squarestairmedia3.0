@@ -2701,3 +2701,88 @@ button {
         height: 300px;
     }
 }
+
+/* === Modal Styling for Services === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  background: #ffffff;
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-family: 'Outfit', sans-serif;
+  position: relative;
+  animation: fadeInUp 0.3s ease;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #111827;
+}
+
+.modal-box p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4B5563;
+}
+
+.modal-box ul {
+  padding-left: 1.25rem;
+  margin-top: 1rem;
+}
+
+.modal-box ul li {
+  margin-bottom: 0.5rem;
+  list-style-type: disc;
+  color: #1F2937;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #6B7280;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #111827;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
