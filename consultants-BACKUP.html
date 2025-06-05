@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Consultant Program | SquareStair Media</title>
+    <meta name="description" content="Join SquareStair Media's Independent Consultant Program. Whether you're experienced or exploring new paths - grow into the consultant you want to become.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="consultants.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dynamic Background Canvas -->
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Progress System -->
+    <div class="progress-system">
+        <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="chapter-navigation">
+            <div class="nav-dot active" data-chapter="1">
+                <span class="dot-label">Recognition</span>
+            </div>
+            <div class="nav-dot" data-chapter="2">
+                <span class="dot-label">Revelation</span>
+            </div>
+            <div class="nav-dot" data-chapter="3">
+                <span class="dot-label">Resolution</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter 1: Recognition -->
+    <section class="chapter chapter-1" id="chapter-1" data-chapter="1">
+        <div class="chapter-background">
+            <div class="floating-geometry">
+                <div class="geo-shape shape-1"></div>
+                <div class="geo-shape shape-2"></div>
+                <div class="geo-shape shape-3"></div>
+                <div class="geo-shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="chapter-content">
+                <div class="chapter-intro" data-aos="fade-up">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">01</span>
+                        <div class="chapter-line"></div>
+                        <span class="chapter-label">Recognition</span>
+                    </div>
+                    <h1 class="mega-title">
+                        You're Ready for 
+                        <span class="gradient-span">Something More</span>
+                    </h1>
+                    <p class="mega-subtitle">
+                        Whether you're a seasoned professional seeking independence or someone exploring new possibilities - you've arrived at the moment where potential meets opportunity.
+                    </p>
+                </div>
+
+                <div class="recognition-showcase" data-aos="fade-up" data-aos-delay="300">
+                    <div class="showcase-grid">
+                        <div class="showcase-card" data-tilt>
+                            <div class="card-glow"></div>
+                            <div class="card-icon">
+                                <div class="icon-orbit">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                            </div>
+                            <h3>You Have Vision</h3>
+                            <p>Ideas that could revolutionize how businesses operate and grow</p>
+                            <div class="card-accent"></div>
+                        </div>
+                        
+                        <div class="showcase-card" data-tilt>
+                            <div class="card-glow"></div>
+                            <div class="card-icon">
+                                <div class="icon-orbit">
+                                    <i class="fas fa-wings"></i>
+                                </div>
+                            </div>
+                            <h3>You Want Freedom</h3>
+                            <p>To work on your terms while building something truly meaningful</p>
+                            <div class="card-accent"></div>
+                        </div>
+                        
+                        <div class="showcase-card" data-tilt>
+                            <div class="card-glow"></div>
+                            <div class="card-icon">
+                                <div class="icon-orbit">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </div>
+                            <h3>You See Opportunity</h3>
+                            <p>In the convergence of AI, automation, and human expertise</p>
+                            <div class="card-accent"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-transition" data-aos="fade-up" data-aos-delay="600">
+                    <button class="morph-button" onclick="scrollToChapter(2)">
+                        <span class="button-text">Discover What's Possible</span>
+                        <div class="button-bg"></div>
+                        <div class="button-particles"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 2: Revelation -->
+    <section class="chapter chapter-2" id="chapter-2" data-chapter="2">
+        <div class="chapter-background">
+            <div class="neural-network">
+                <div class="network-node" style="--x: 10%; --y: 20%; --delay: 0s;"></div>
+                <div class="network-node" style="--x: 30%; --y: 10%; --delay: 0.5s;"></div>
+                <div class="network-node" style="--x: 70%; --y: 15%; --delay: 1s;"></div>
+                <div class="network-node" style="--x: 90%; --y: 30%; --delay: 1.5s;"></div>
+                <div class="network-node" style="--x: 20%; --y: 60%; --delay: 2s;"></div>
+                <div class="network-node" style="--x: 50%; --y: 70%; --delay: 2.5s;"></div>
+                <div class="network-node" style="--x: 80%; --y: 80%; --delay: 3s;"></div>
+                <svg class="connection-lines">
+                    <path class="connection" d="M 100 150 Q 200 100 300 120"></path>
+                    <path class="connection" d="M 300 120 Q 400 140 500 180"></path>
+                    <path class="connection" d="M 200 400 Q 300 350 400 380"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="chapter-content">
+                <div class="chapter-intro" data-aos="fade-up">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">02</span>
+                        <div class="chapter-line"></div>
+                        <span class="chapter-label">Revelation</span>
+                    </div>
+                    <h2 class="mega-title">
+                        What Becomes Possible
+                        <span class="gradient-span">Under Our Wing</span>
+                    </h2>
+                    <p class="mega-subtitle">
+                        The SquareStair Media Independent Consultant Program isn't just training - it's your evolution accelerator.
+                    </p>
+                </div>
+
+                <div class="revelation-ecosystem" data-aos="fade-up" data-aos-delay="300">
+                    <div class="ecosystem-visual">
+                        <div class="central-hub">
+                            <div class="hub-core">
+                                <span>You</span>
+                            </div>
+                            <div class="hub-ring ring-1"></div>
+                            <div class="hub-ring ring-2"></div>
+                        </div>
+                        
+                        <div class="ecosystem-elements">
+                            <div class="eco-element" style="--angle: 0deg; --distance: 180px;">
+                                <span>AI Tools</span>
+                            </div>
+                            <div class="eco-element" style="--angle: 60deg; --distance: 180px;">
+                                <span>Brand Power</span>
+                            </div>
+                            <div class="eco-element" style="--angle: 120deg; --distance: 180px;">
+                                <span>Training</span>
+                            </div>
+                            <div class="eco-element" style="--angle: 180deg; --distance: 180px;">
+                                <span>Community</span>
+                            </div>
+                            <div class="eco-element" style="--angle: 240deg; --distance: 180px;">
+                                <span>Support</span>
+                            </div>
+                            <div class="eco-element" style="--angle: 300deg; --distance: 180px;">
+                                <span>Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ecosystem-benefits">
+                        <div class="benefit-item" data-aos="slide-left" data-aos-delay="400">
+                            <div class="benefit-check">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Operate under the trusted SquareStair Media brand</span>
+                        </div>
+                        <div class="benefit-item" data-aos="slide-left" data-aos-delay="500">
+                            <div class="benefit-check">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Access cutting-edge AI automation tools and training</span>
+                        </div>
+                        <div class="benefit-item" data-aos="slide-left" data-aos-delay="600">
+                            <div class="benefit-check">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Personalized development path based on your experience</span>
+                        </div>
+                        <div class="benefit-item" data-aos="slide-left" data-aos-delay="700">
+                            <div class="benefit-check">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Global network of forward-thinking consultants</span>
+                        </div>
+                        <div class="benefit-item" data-aos="slide-left" data-aos-delay="800">
+                            <div class="benefit-check">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Proven methodologies and shared resources</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blueprint Showcase -->
+                <div class="blueprint-showcase" data-aos="fade-up" data-aos-delay="900">
+                    <div class="showcase-container">
+                        <div class="blueprint-visual">
+                            <div class="blueprint-device">
+                                <div class="device-screen">
+                                    <div class="screen-header">
+                                        <div class="header-title">Consultant Readiness Blueprint</div>
+                                        <div class="header-badge">Instant Access</div>
+                                    </div>
+                                    <div class="screen-content">
+                                        <div class="content-section">
+                                            <div class="section-title">Self-Assessment Framework</div>
+                                            <div class="progress-bar-demo">
+                                                <div class="progress-fill-demo"></div>
+                                            </div>
+                                        </div>
+                                        <div class="content-section">
+                                            <div class="section-title">Skill Gap Analysis</div>
+                                            <div class="chart-demo">
+                                                <div class="chart-bar" style="height: 60%;"></div>
+                                                <div class="chart-bar" style="height: 40%;"></div>
+                                                <div class="chart-bar" style="height: 80%;"></div>
+                                                <div class="chart-bar" style="height: 90%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="content-section">
+                                            <div class="section-title">Your Action Plan</div>
+                                            <div class="checklist-demo">
+                                                <div class="check-item checked"></div>
+                                                <div class="check-item checked"></div>
+                                                <div class="check-item"></div>
+                                                <div class="check-item"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="device-glow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="blueprint-info">
+                            <h3>Start Your Transformation Today</h3>
+                            <p>Get the Consultant Readiness Blueprint - your comprehensive guide to assess strengths, identify growth areas, and map your path forward.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>Self-Assessment Framework</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-chart-gap"></i>
+                                    <span>Skill Gap Analysis Tools</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-route"></i>
+                                    <span>Personalized Action Plan</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Priority Waitlist Access</span>
+                                </div>
+                            </div>
+                            
+                            <div class="blueprint-cta">
+                                <button class="premium-button" onclick="openBlueprintModal()">
+                                    <span class="button-content">
+                                        <span class="button-text">Get Blueprint</span>
+                                        <span class="button-price">$8.95 CAD</span>
+                                    </span>
+                                    <div class="button-shine"></div>
+                                </button>
+                                <p class="cta-note">Instant download + Priority waitlist access</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chapter-transition" data-aos="fade-up" data-aos-delay="1200">
+                    <button class="morph-button" onclick="scrollToChapter(3)">
+                        <span class="button-text">Ready to Begin</span>
+                        <div class="button-bg"></div>
+                        <div class="button-particles"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 3: Resolution -->
+    <section class="chapter chapter-3" id="chapter-3" data-chapter="3">
+        <div class="chapter-background">
+            <div class="particle-field" id="particle-field"></div>
+        </div>
+        
+        <div class="container">
+            <div class="chapter-content">
+                <div class="chapter-intro" data-aos="fade-up">
+                    <div class="chapter-meta">
+                        <span class="chapter-number">03</span>
+                        <div class="chapter-line"></div>
+                        <span class="chapter-label">Resolution</span>
+                    </div>
+                    <h2 class="mega-title">
+                        Your Evolution
+                        <span class="gradient-span">Starts Here</span>
+                    </h2>
+                    <p class="mega-subtitle">
+                        Join the waitlist to be among the first to access our Independent Consultant Program when it launches.
+                    </p>
+                </div>
+
+                <div class="resolution-form" data-aos="fade-up" data-aos-delay="300">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h3>Reserve Your Evolution</h3>
+                            <p>Be first to know when the future of consulting arrives</p>
+                        </div>
+                        
+                        <form id="waitlist-form" class="futuristic-form">
+                            <div class="input-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <div class="input-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="email">Email Address</label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="email" name="email" required>
+                                    <div class="input-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="experience">Experience Level</label>
+                                <div class="select-wrapper">
+                                    <select id="experience" name="experience" required>
+                                        <option value="">Choose your starting point</option>
+                                        <option value="exploring">Exploring consulting as a new path</option>
+                                        <option value="some">Some consulting/freelance experience</option>
+                                        <option value="experienced">Experienced consultant seeking growth</option>
+                                        <option value="expert">Seasoned expert wanting brand partnership</option>
+                                    </select>
+                                    <div class="select-highlight"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Areas of Interest</label>
+                                <div class="checkbox-grid">
+                                    <label class="futuristic-checkbox">
+                                        <input type="checkbox" name="interests" value="ai-automation">
+                                        <span class="checkbox-custom">
+                                            <i class="fas fa-robot"></i>
+                                        </span>
+                                        <span class="checkbox-label">AI & Automation</span>
+                                    </label>
+                                    <label class="futuristic-checkbox">
+                                        <input type="checkbox" name="interests" value="digital-strategy">
+                                        <span class="checkbox-custom">
+                                            <i class="fas fa-chess"></i>
+                                        </span>
+                                        <span class="checkbox-label">Digital Strategy</span>
+                                    </label>
+                                    <label class="futuristic-checkbox">
+                                        <input type="checkbox" name="interests" value="content-marketing">
+                                        <span class="checkbox-custom">
+                                            <i class="fas fa-pen-nib"></i>
+                                        </span>
+                                        <span class="checkbox-label">Content & Marketing</span>
+                                    </label>
+                                    <label class="futuristic-checkbox">
+                                        <input type="checkbox" name="interests" value="business-development">
+                                        <span class="checkbox-custom">
+                                            <i class="fas fa-chart-line"></i>
+                                        </span>
+                                        <span class="checkbox-label">Business Development</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="quantum-button" id="submit-btn">
+                                <span class="button-text">Join the Waitlist</span>
+                                <div class="button-quantum"></div>
+                                <div class="button-energy"></div>
+                            </button>
+                            
+                            <p class="form-disclaimer">
+                                We'll notify you when the program launches. No spam, unsubscribe anytime.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-matrix" data-aos="fade-up" data-aos-delay="600">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <span>Trusted by 40+ businesses</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <span>Global reach, local support</span>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span>AI-powered excellence since 2023</span>
+                    </div>
+                </div>
+
+                <!-- Canadian Pride -->
+                <div class="canadian-pride" data-aos="fade-up" data-aos-delay="900">
+                    <div class="pride-content">
+                        <svg class="canadian-flag" width="32" height="16" viewBox="0 0 32 16">
+                            <rect width="10.67" height="16" fill="#FF0000"/>
+                            <rect x="10.67" width="10.67" height="16" fill="#FFFFFF"/>
+                            <rect x="21.33" width="10.67" height="16" fill="#FF0000"/>
+                            <path d="M16 3L17.5 6H20L18 8L18.5 11L16 9.5L13.5 11L14 8L12 6H14.5L16 3Z" fill="#FF0000"/>
+                        </svg>
+                        <span>Proudly Canadian owned and operated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blueprint Purchase Modal -->
+    <div class="modal-system" id="blueprint-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Consultant Readiness Blueprint</h3>
+                <button class="modal-close" onclick="closeBlueprintModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-content">
+                <div class="product-showcase">
+                    <div class="product-visual">
+                        <div class="product-mockup">
+                            <div class="mockup-cover">
+                                <div class="cover-title">Consultant Readiness Blueprint</div>
+                                <div class="cover-subtitle">Your Strategic Foundation</div>
+                                <div class="cover-logo">SquareStair</div>
+                            </div>
+                            <div class="mockup-glow"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h4>What You Get</h4>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i>Comprehensive self-assessment framework</li>
+                            <li><i class="fas fa-check-circle"></i>Skill gap analysis tools and templates</li>
+                            <li><i class="fas fa-check-circle"></i>Personalized 90-day action plan builder</li>
+                            <li><i class="fas fa-check-circle"></i>Priority access to consultant program</li>
+                            <li><i class="fas fa-check-circle"></i>Instant PDF download</li>
+                        </ul>
+                        
+                        <div class="price-display">
+                            <span class="price-amount">$8.95 CAD</span>
+                            <span class="price-note">One-time purchase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="purchase-form" class="purchase-form">
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="purchase-email">Email</label>
+                                <input type="email" id="purchase-email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="purchase-first-name">First Name</label>
+                                <input type="text" id="purchase-first-name" name="firstName" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="purchase-last-name">Last Name</label>
+                                <input type="text" id="purchase-last-name" name="lastName" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Payment Details</h4>
+                        <div class="input-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="card-expiry">Expiry</label>
+                                <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="card-cvc">CVC</label>
+                                <input type="text" id="card-cvc" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="purchase-button">
+                        <span class="button-text">Complete Purchase - $8.95 CAD</span>
+                        <i class="fas fa-lock"></i>
+                    </button>
+                    
+                    <p class="security-note">
+                        <i class="fas fa-shield-alt"></i>
+                        Secure payment processing. Download link sent instantly.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-system" id="success-modal">
+        <div class="success-backdrop"></div>
+        <div class="success-container">
+            <div class="success-animation">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="success-ripple"></div>
+            </div>
+            <h3 id="success-title">Welcome to Your Journey!</h3>
+            <p id="success-message">You've taken the first step toward transformation.</p>
+            <button class="success-button" onclick="closeSuccessModal()">
+                Continue Your Evolution
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="consultants.js"></script>
+</body>
+</html>
